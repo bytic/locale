@@ -3,6 +3,7 @@
 namespace Nip\Locale;
 
 use Locale as PhpLocale;
+use Nip\Locale\Traits\HasSupportedTrait;
 use Nip_File_System;
 
 /**
@@ -11,7 +12,7 @@ use Nip_File_System;
  */
 class Locale
 {
-    protected $supported;
+    use HasSupportedTrait;
 
     protected $data = [];
 
@@ -19,26 +20,13 @@ class Locale
 
     protected $current;
 
-    public function getSupported()
-    {
-        if (!$this->supported) {
-            $files = Nip_File_System::instance()->scanDirectory($this->getDataFolder());
-            foreach ($files as $file) {
-                if (substr($file, 0, 1) != '_') {
-                    $name = str_replace('.php', '', $file);
-                    $this->supported[] = $name;
-                }
-            }
-        }
-        return $this->supported;
-    }
 
     /**
      * @return string
      */
     protected function getDataFolder()
     {
-        return dirname(__FILE__) . '/data/';
+        return dirname(dirname(__FILE__)) . '/data/';
     }
 
     /**
@@ -120,15 +108,6 @@ class Locale
         }
 
         return setlocale(LC_TIME, 0);
-    }
-
-    /**
-     * @param $name
-     * @return bool
-     */
-    public function isSupported($name)
-    {
-        return $this->hasDataFile($name);
     }
 
     /**

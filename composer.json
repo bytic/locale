@@ -15,7 +15,7 @@
       "Nip\\Locale\\": "src"
     },
     "classmap": [
-      "src"
+      "legacy"
     ]
   },
   "autoload-dev": {

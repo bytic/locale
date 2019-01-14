@@ -2,7 +2,7 @@
 
 namespace Nip\Locale;
 
-use Nip\Container\ServiceProviders\Providers\AbstractSignatureServiceProvider;
+use Nip\Container\ServiceProvider\AbstractSignatureServiceProvider;
 
 /**
  * Class LocaleServiceProvider
@@ -21,7 +21,7 @@ class LocaleServiceProvider extends AbstractSignatureServiceProvider
 
     protected function registerLocale()
     {
-        $this->getContainer()->share('locale', Locale::class);
+        $this->getContainer()->singleton('locale', Locale::class);
     }
 
     /**

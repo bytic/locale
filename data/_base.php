@@ -1,6 +1,6 @@
 <?php
 
-$_data['time'] = array(
+$_data['time'] = [
     'dateTimeFormat' => 'm/d/Y H:m',
     'dateFormat' => 'm/d/Y',
     'dateStringFormatMini' => '%d/%b/%y',
@@ -10,4 +10,4 @@ $_data['time'] = array(
     'dayDateTimeStringFormat' => '%A, %d %B, %Y %X',
     'firstWeekDay' => 0,
     'timeFormat' => 'H:m',
-);
+];

@@ -2,7 +2,7 @@
 
 $_import = '_base';
 
-$_data['time'] = array(
+$_data['time'] = [
     'dateTimeFormat' => 'd/m/Y H:m',
     'dateFormat' => 'd/m/Y',
     'dateStringFormatMini' => '%d/%b/%y',
@@ -10,4 +10,4 @@ $_data['time'] = array(
     'dayDateStringFormat' => '%A, %d %B, %Y',
     'firstWeekDay' => 0,
     'timeFormat' => 'H:m',
-);
+];

@@ -16,6 +16,9 @@
     },
     "classmap": [
       "legacy"
+    ],
+    "files": [
+      "src/functions/application_namespaced.php"
     ]
   },
   "autoload-dev": {
